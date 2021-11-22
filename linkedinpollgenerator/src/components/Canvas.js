@@ -143,7 +143,7 @@ class ImageEditor extends Component
             style={{fontSize: 20, width: 350}}
           />
         </div>       
-        <canvas className="canvas" ref="resultCanvas" style={this.state.mainCanvasVisibleStyle} width="1600" height="800"/>
+        <canvas className="canvas" ref="resultCanvas" style={this.state.mainCanvasVisibleStyle} width="1200" height="628"/>
         <div className = "icongrid">
           <EmojiChecker type="like" img={like}/>
           <EmojiChecker type="celebrate" img={celebrate}/>
