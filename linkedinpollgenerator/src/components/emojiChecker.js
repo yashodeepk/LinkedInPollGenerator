@@ -8,9 +8,9 @@ export default function EmojiChecker(props)
 
     const valueIs = `Enter label for ${props.type}`;
 
-    const handleOnChange = () => {
-        setIsChecked(!isChecked); 
-    }
+    // const handleOnChange = () => {
+    //     setIsChecked(!isChecked);
+    // }
 
     const handleTextChange = (e) => {
         setMessage(e.target.value)
@@ -24,7 +24,10 @@ export default function EmojiChecker(props)
                     id={props.type} 
                     name={props.type} 
                     value={props.type}
-                    onChange={handleOnChange}
+                    onChange={() => {
+                        setIsChecked(!isChecked);
+                        props.addEmoji(!isChecked,props.type);
+                    }}
                     checked = {isChecked}
                 />
                 <img 

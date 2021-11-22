@@ -16,7 +16,7 @@ class ImageEditor extends Component
   {
     super(props);
     this.state = {
-      title: "",
+      title: '',
       imgData: "",      
       mainCanvasVisibleStyle: {
         display: 'inline-block'
@@ -24,19 +24,19 @@ class ImageEditor extends Component
       isSelectDisabled: true,
     }
     this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.addEmoji = this.addEmoji.bind(this);
   }
-    
 
-  handleTitleChange(event) {
+  handleTitleChange(event) {    
     this.setState({title: event.target.value});
-    this.showText(this.state.title);
+    this.showText(event.target.value);
   }
   
   getCanvasMidPoint()
   {
     const canvas = this.refs.resultCanvas;
-    let xPoint = canvas.width /2 - this.state.selection.width / 2;
-    let yPoint = canvas.height /2 - this.state.selection.height / 2;
+    let xPoint = canvas.width /2;
+    let yPoint = canvas.height /2;
     return {
       x: xPoint,
       y: yPoint
@@ -47,20 +47,29 @@ class ImageEditor extends Component
     let canvas =  this.refs.resultCanvas;
     const context = canvas.getContext("2d");
     let _this = this;
-    context.font = "60px Arial";
-    context.fillStyle = "red";
-    context.clearRect(0, 0, canvas.width, canvas.height); 
-    context.fillText(title,10, 50);
+
+    context.save();
+    context.font = "bold 55px Arial";
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.textAlign = 'center';
+    context.fillText(title,canvas.width/2, 100);
+    context.restore();
+
     _this.setState({imgData: canvas.toDataURL('image/jpeg')});
     _this.setState({isSelectDisabled: false});
   }
 
-  showImage(){
+  showImage(type){
     let canvas =  this.refs.resultCanvas;
     const context = canvas.getContext("2d"); 
     let _this = this;
     var image = new Image();
-    image.src = heart;
+    if(type === "heart") image.src = heart;
+    else if(type === "like") image.src = like;
+    else if(type === "celebrate") image.src = celebrate;
+    else if(type === "support") image.src = support;
+    else if(type === "insight") image.src = insight;
+    else if(type === "curious") image.src = curious;
     image.onload = function() {  
       context.clearRect(0, 0, canvas.width, canvas.height); 
       let imgSize = {
@@ -121,13 +130,28 @@ class ImageEditor extends Component
 
   downloadImg()
   {
+    let canvas =  this.refs.resultCanvas;
+    const context = canvas.getContext("2d");
+    let _this = this;
+    context.globalCompositeOperation = 'destination-over'
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    _this.setState({imgData: canvas.toDataURL('image/jpeg')});
+    _this.setState({isSelectDisabled: false});
     console.log("downloadImg");
     console.log(this.state.imgData);
     var dt = this.state.imgData;
     this.refs.downloadBtn.href = dt;
   }
 
-
+  addEmoji = (checked, type) =>
+  {
+    if(checked)
+    {
+      this.showImage(type);
+      console.log("Emoji added");
+    }
+  }
 
   render(){
     return (
@@ -145,12 +169,12 @@ class ImageEditor extends Component
         </div>       
         <canvas className="canvas" ref="resultCanvas" style={this.state.mainCanvasVisibleStyle} width="1200" height="628"/>
         <div className = "icongrid">
-          <EmojiChecker type="like" img={like}/>
-          <EmojiChecker type="celebrate" img={celebrate}/>
-          <EmojiChecker type="support" img={support}/>
-          <EmojiChecker type="heart" img={heart}/>
-          <EmojiChecker type="insight" img={insight}/>
-          <EmojiChecker type="curious" img={curious}/>
+          <EmojiChecker type="like" img={like} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="celebrate" img={celebrate} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="support" img={support} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="heart" img={heart} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="insight" img={insight} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="curious" img={curious} addEmoji = {this.addEmoji}/>
         </div>
         <a id="download" ref="downloadBtn" onClick={this.downloadImg.bind(this)} download="LinkeIn_Reaction_Poll_Image.jpg" href={this.state.imgData}> 
           <button disabled={this.state.isSelectDisabled} className="submit-button">Download</button>
