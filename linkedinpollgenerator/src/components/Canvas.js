@@ -19,10 +19,11 @@ class ImageEditor extends Component
       emojiCount: 2,
       imgWidth: 150,
       imgHeight: 150,
-      xPosition: 300,
+      xPosition: 350,
       yPosition: 350,
+      checked: [false,false,false,false,false,false],
       count: 1,
-      constantDistance: 300,
+      constantDistance: 350,
       title: '',
       imgData: "",      
       mainCanvasVisibleStyle: {
@@ -35,15 +36,48 @@ class ImageEditor extends Component
     this.handleEmojiChange = this.handleEmojiChange.bind(this);
   }
 
+  componentDidMount()
+  {
+    let canvas =  this.refs.resultCanvas;
+    this.setState({xPosition: canvas.width/4-75});
+    this.setState({constantDistance: canvas.width/2});
+  }
+
   handleEmojiChange(event) {
-    if(event.target.value>=1 && event.target.value <=6)
+    if(event.target.value>=1 && event.target.value <=4)
     {
       let canvas =  this.refs.resultCanvas;
       const context = canvas.getContext("2d"); 
-
       context.clearRect(0,0,canvas.width, canvas.height);
-
       this.setState({emojiCount: event.target.value});
+      this.setState({count: 1});
+      console.log(event.target.value);
+      this.setState({checked: [false,false,false,false,false,false]});
+      switch(event.target.value)
+      {
+        case '1':
+          console.log("in 1st case");
+          this.setState({xPosition: canvas.width/2-75});
+          break;
+        case '2':
+          this.setState({xPosition: canvas.width/4-75});
+          this.setState({constantDistance: canvas.width/2});
+          break;
+        case '3':
+          this.setState({xPosition: canvas.width/4-75});
+          this.setState({constantDistance: canvas.width/4});
+          break;
+        case '4':
+          this.setState({xPosition: canvas.width/8-75});
+          this.setState({constantDistance: canvas.width/4});
+          break;
+        case '5':
+          break;
+        case '6':
+          break;
+        default:
+          console.log('In Switch Case');
+      }
     }
   }
 
@@ -87,7 +121,7 @@ class ImageEditor extends Component
     let imageWidth = this.state.imgWidth;
     let imageHeight = this.state.imgHeight;
     let constantDis = this.state.constantDistance;
-
+    let cnt = this.state.count;
     let xPos = this.state.xPosition;
     let yPos = this.state.yPosition;
 
@@ -102,11 +136,13 @@ class ImageEditor extends Component
     image.onload = function() {
       context.save();
       context.textAlign = 'center';     
-      context.drawImage(image, xPos, yPos, imageWidth, imageHeight);
+      context.drawImage(image, xPos + constantDis*(cnt - 1), yPos, imageWidth, imageHeight);
       context.restore();
       _this.setState({imgData: canvas.toDataURL('image/jpeg')});
       _this.setState({isSelectDisabled: false});
     };
+
+    this.setState({count: cnt+1});
   }
 
   downloadImg()
@@ -129,14 +165,21 @@ class ImageEditor extends Component
   {
     if(checked)
     {
-      this.showImage(type);
-      console.log("Emoji added");
+      if(this.state.count <= this.state.emojiCount)
+      {
+        this.showImage(type);
+        console.log("Emoji added");
+      }
     }
     else
     {
       let canvas =  this.refs.resultCanvas;
       const context = canvas.getContext("2d"); 
       context.clearRect(0,0,canvas.width, canvas.height);
+      this.setState({count: 1});
+      //window.location.reload(false);
+      this.setState({checked: [false,false,false,false,false,false]});
+      this.setState({});
     }
   }
 
@@ -166,12 +209,12 @@ class ImageEditor extends Component
         </div>       
         <canvas className="canvas" ref="resultCanvas" style={this.state.mainCanvasVisibleStyle} width="1200" height="628"/>
         <div className = "icongrid">
-          <EmojiChecker type="like" img={like} addEmoji = {this.addEmoji}/>
-          <EmojiChecker type="celebrate" img={celebrate} addEmoji = {this.addEmoji}/>
-          <EmojiChecker type="support" img={support} addEmoji = {this.addEmoji}/>
-          <EmojiChecker type="heart" img={heart} addEmoji = {this.addEmoji}/>
-          <EmojiChecker type="insight" img={insight} addEmoji = {this.addEmoji}/>
-          <EmojiChecker type="curious" img={curious} addEmoji = {this.addEmoji}/>
+          <EmojiChecker type="like" img={like} addEmoji = {this.addEmoji} checked = {this.state.checked[0]}/>
+          <EmojiChecker type="celebrate" img={celebrate} addEmoji = {this.addEmoji} checked = {this.state.checked[1]}/>
+          <EmojiChecker type="support" img={support} addEmoji = {this.addEmoji} checked = {this.state.checked[2]}/>
+          <EmojiChecker type="heart" img={heart} addEmoji = {this.addEmoji} checked = {this.state.checked[3]}/>
+          <EmojiChecker type="insight" img={insight} addEmoji = {this.addEmoji} checked = {this.state.checked[4]}/>
+          <EmojiChecker type="curious" img={curious} addEmoji = {this.addEmoji} checked = {this.state.checked[5]}/>
         </div>
         <a id="download" ref="downloadBtn" onClick={this.downloadImg.bind(this)} download="LinkeIn_Reaction_Poll_Image.jpg" href={this.state.imgData}> 
           <button disabled={this.state.isSelectDisabled} className="submit-button">Download</button>

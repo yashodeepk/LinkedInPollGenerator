@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 export default function EmojiChecker(props)
 {
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(props.checked);
     const [message, setMessage] = useState("");
 
     const valueIs = `Enter label for ${props.type}`;
