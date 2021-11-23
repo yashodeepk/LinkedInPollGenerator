@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ab5f004.chunk.css",
-    "main.js": "/static/js/main.ce64bddd.chunk.js",
-    "main.js.map": "/static/js/main.ce64bddd.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1264ee69.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1264ee69.js.map",
-    "static/js/2.c6137614.chunk.js": "/static/js/2.c6137614.chunk.js",
-    "static/js/2.c6137614.chunk.js.map": "/static/js/2.c6137614.chunk.js.map",
-    "static/js/3.4d16ed9c.chunk.js": "/static/js/3.4d16ed9c.chunk.js",
-    "static/js/3.4d16ed9c.chunk.js.map": "/static/js/3.4d16ed9c.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.7ab5f004.chunk.css.map": "/static/css/main.7ab5f004.chunk.css.map",
-    "static/js/2.c6137614.chunk.js.LICENSE.txt": "/static/js/2.c6137614.chunk.js.LICENSE.txt",
-    "static/media/LinkedIn-Like.0442269c.png": "/static/media/LinkedIn-Like.0442269c.png",
-    "static/media/Linkedin-Celebrate.ffdc8a43.png": "/static/media/Linkedin-Celebrate.ffdc8a43.png",
-    "static/media/Linkedin-Curious.9cec2c3a.png": "/static/media/Linkedin-Curious.9cec2c3a.png",
-    "static/media/Linkedin-Heart.7ffe4395.png": "/static/media/Linkedin-Heart.7ffe4395.png",
-    "static/media/Linkedin-Insightful.c25d8f76.png": "/static/media/Linkedin-Insightful.c25d8f76.png",
-    "static/media/Linkedin-Support.025bd33c.png": "/static/media/Linkedin-Support.025bd33c.png"
+    "main.css": "/reactionpollgenerator/static/css/main.99804f61.chunk.css",
+    "main.js": "/reactionpollgenerator/static/js/main.83ac1508.chunk.js",
+    "main.js.map": "/reactionpollgenerator/static/js/main.83ac1508.chunk.js.map",
+    "runtime-main.js": "/reactionpollgenerator/static/js/runtime-main.a6303191.js",
+    "runtime-main.js.map": "/reactionpollgenerator/static/js/runtime-main.a6303191.js.map",
+    "static/js/2.b159c2cc.chunk.js": "/reactionpollgenerator/static/js/2.b159c2cc.chunk.js",
+    "static/js/2.b159c2cc.chunk.js.map": "/reactionpollgenerator/static/js/2.b159c2cc.chunk.js.map",
+    "static/js/3.678a91e6.chunk.js": "/reactionpollgenerator/static/js/3.678a91e6.chunk.js",
+    "static/js/3.678a91e6.chunk.js.map": "/reactionpollgenerator/static/js/3.678a91e6.chunk.js.map",
+    "index.html": "/reactionpollgenerator/index.html",
+    "static/css/main.99804f61.chunk.css.map": "/reactionpollgenerator/static/css/main.99804f61.chunk.css.map",
+    "static/js/2.b159c2cc.chunk.js.LICENSE.txt": "/reactionpollgenerator/static/js/2.b159c2cc.chunk.js.LICENSE.txt",
+    "static/media/LinkedIn-Like.0442269c.png": "/reactionpollgenerator/static/media/LinkedIn-Like.0442269c.png",
+    "static/media/Linkedin-Celebrate.ffdc8a43.png": "/reactionpollgenerator/static/media/Linkedin-Celebrate.ffdc8a43.png",
+    "static/media/Linkedin-Curious.9cec2c3a.png": "/reactionpollgenerator/static/media/Linkedin-Curious.9cec2c3a.png",
+    "static/media/Linkedin-Heart.7ffe4395.png": "/reactionpollgenerator/static/media/Linkedin-Heart.7ffe4395.png",
+    "static/media/Linkedin-Insightful.c25d8f76.png": "/reactionpollgenerator/static/media/Linkedin-Insightful.c25d8f76.png",
+    "static/media/Linkedin-Support.025bd33c.png": "/reactionpollgenerator/static/media/Linkedin-Support.025bd33c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1264ee69.js",
-    "static/js/2.c6137614.chunk.js",
-    "static/css/main.7ab5f004.chunk.css",
-    "static/js/main.ce64bddd.chunk.js"
+    "static/js/runtime-main.a6303191.js",
+    "static/js/2.b159c2cc.chunk.js",
+    "static/css/main.99804f61.chunk.css",
+    "static/js/main.83ac1508.chunk.js"
   ]
 }
