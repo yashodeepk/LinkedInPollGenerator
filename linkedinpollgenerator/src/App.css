@@ -2,23 +2,90 @@
   text-align: center;
 }
 
-.preview{
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
 .submit-button{
   background-color: blue;
   color: white;
   border-radius: 5px;
   font-size: 20px;
-  margin: 20px;
+  margin-top: 15px;
+  margin-bottom: 2px;
   border-color: blue;
 }
 
-.icongrid{
+.imageGrid{
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.displayIcon{
+  text-align: center;
+}
+
+.displayIcon img{
+  max-height: 120px;
+}
+
+.displayIcon p {
+  font-size: 1.2rem;
+  font-weight:bold;
+  margin: 0;
+}
+
+.box{
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+  width: 555px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* .titleRef{
+  margin: 10px ;
+} */
+
+.canvas{
+  padding-top: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 545px;
+  min-height: 400px;
+  background: #fff;
+  word-wrap:break-word;
+  overflow-wrap: break-word;
+}
+
+.iconGrid {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.iconShow{
+  text-align: center;
+}
+
+.iconGroup {
+  display: grid;
+  justify-items: center;
+}
+
+/* #curiousIcon{
+  color: blue;
+} */
+
+.arrowIcon{
+  color:black;
+  margin-bottom: 4px;
+}
+
+.previewGroup{
+  display: grid;
+  justify-items: center;
+}
+
+.iconGroup input[type = 'text'] {
+  width: 80%;
 }
