@@ -14,4 +14,4 @@ That's it!!
 <img width="1393" alt="Screenshot 2021-11-23 at 2 18 42 PM" src="https://user-images.githubusercontent.com/31348410/142994414-d86da628-bfc7-422d-9b46-93add5a092f3.png">
 
 
-I would like to thank, Alex Chiou and Rahul Pandey got the Idea and Luke Hovee for the design inspiration.
+I would like to thank, Alex Chiou and Rahul Pandey for sharing the Idea and Luke Hovee for the design inspiration.
