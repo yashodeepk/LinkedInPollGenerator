@@ -1,7 +1,7 @@
 import './App.css';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 import domtoimage from 'dom-to-image';
-//import { saveAs } from 'file-saver';
+import { saveAs } from 'file-saver';
 
 import heart from './assests/images/Linkedin-Heart.png';
 import like from './assests/images/LinkedIn-Like.png';
