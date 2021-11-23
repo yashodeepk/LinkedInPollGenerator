@@ -46,7 +46,7 @@ function App() {
   });
 
   function downloadimg() {
-    const options = { width: 542, height: 400 }
+    const options = { width: 550, height: 350 }
     const nodeElement = document.querySelector('.canvas')
     domtoimage.toBlob(nodeElement, options).then(function (blob) {
       window.saveAs(blob, `${reactionTitle}_Generator_Image`)
