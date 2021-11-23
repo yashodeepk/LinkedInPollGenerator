@@ -1,5 +1,5 @@
 # LinkedIn Reaction PollGenerator
-Generate Reaction Poll Easily
+Generate Reaction Poll Easily to gain more engagement for your content.
 
 Example
 
@@ -7,8 +7,11 @@ Example
 
 Using this tool is very straight forward
 1. Enter the Poll title
-2. Chose the icons with appropraite labels
-3. Just Click On Download
+2. Choose from the icons options and add appropriate label
+3. Click On Download
+That's it!!
 
 <img width="1393" alt="Screenshot 2021-11-23 at 2 18 42 PM" src="https://user-images.githubusercontent.com/31348410/142994414-d86da628-bfc7-422d-9b46-93add5a092f3.png">
 
+
+I would like to thank, Alex Chiou and Rahul Pandey got the Idea and Luke Hovee for the design inspiration.
