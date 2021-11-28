@@ -54,10 +54,15 @@ function App() {
   }
 
   return (
-    <div className = "App">
-      <h1>LinkedIn Reaction Poll Generator</h1>
+    <>
+      <header className='header'>
+        <div className='wrapper'>
+          <h1>Reaction Poll Generator</h1>
+          <p className='tagline'>Ease your engagement process</p>
+        </div>
+      </header>
       <div>
-        <label style={{fontSize: 20, margin: 10}}>
+        <label>
           Poll Title: 
           <input 
             type="text" 
@@ -291,7 +296,7 @@ function App() {
       <p id="footer">Special Mentions! Mentor: <a href="https://www.linkedin.com/in/alexander-chiou/">Alex Chiou </a> 
       and <a href="https://www.linkedin.com/in/rpandey1234/"> Rahul pandey </a>
        Design: <a href="https://www.linkedin.com/in/luke-hovee-2433b7b4/"> Luke Hovee</a></p>
-    </div>
+    </>
   );
   
   function Canvas() {
