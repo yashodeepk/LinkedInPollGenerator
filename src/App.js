@@ -61,6 +61,7 @@ function App() {
           <p className='tagline'>Ease your engagement process</p>
         </div>
       </header>
+      <div className='App'>
       <div>
         <label>
           Poll Title: 
@@ -296,6 +297,7 @@ function App() {
       <p id="footer">Special Mentions! Mentor: <a href="https://www.linkedin.com/in/alexander-chiou/">Alex Chiou </a> 
       and <a href="https://www.linkedin.com/in/rpandey1234/"> Rahul pandey </a>
        Design: <a href="https://www.linkedin.com/in/luke-hovee-2433b7b4/"> Luke Hovee</a></p>
+       </div>
     </>
   );
   
